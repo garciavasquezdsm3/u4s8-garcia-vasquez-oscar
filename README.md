@@ -1,34 +1,32 @@
-# 🚀 Sistema de Gestión de Servicios con Autenticación y Sesiones (Django)
+# U4S8 — García Vásquez Óscar
 
-Proyecto desarrollado para la **Unidad 4 · Semana 7 (Pulido Funcional, UX y Simulacro de Defensa)**, basado en la base de la Unidad 3. Permite la gestión segura de servicios profesionales con autenticación de usuarios, aislamiento estricto de datos, búsqueda por título y paginación.
+## Demo en vivo (producción)
+https://u4s8-garcia-vasquez-oscar.onrender.com
 
----
+## Qué hace este proyecto
+Sistema web profesional desarrollado en Django para la gestión de servicios profesionales. Permite a los usuarios registrarse, iniciar sesión y gestionar exclusivamente sus propios servicios con un aislamiento estricto de datos. Incluye operaciones CRUD completas, filtrado por búsqueda en tiempo real y paginación de resultados. La interfaz está diseñada con Tailwind CSS para ofrecer una experiencia moderna, limpia y totalmente responsive.
 
-## ✨ Características Principales
+## Stack técnico
+Django + MySQL (Aiven) + Tailwind CSS + Render
 
-* 🔐 **Sistema de Autenticación Propio:** Vistas de Registro (`/registro/`), Login (`/login/`) y Logout (`/logout/`) utilizando `django.contrib.auth`.
-* 🛡️ **Aislamiento de Datos por Usuario:** Cada usuario registrado gestiona únicamente sus propios servicios (`propietario=request.user`), protegiendo las vistas con el decorador `@login_required`.
-* 📋 **CRUD Completo con Búsqueda y Paginación (Semana 7):** Creación, lectura, edición y eliminación de servicios con filtrado por búsqueda (`?q=`) y paginación de 5 elementos por página.
-* 🎨 **Diseño Moderno & UX:** Interfaces estilizadas con **Tailwind CSS**, diseño responsive (`overflow-x-auto`), estados vacíos informativos y manejo de mensajes flash (`messages`).
-* 🗄️ **Base de Datos Robusta:** Conexión a MySQL (Aiven) mediante `PyMySQL` y variables de entorno (`python-decouple`).
+## Cómo se prueba el aislamiento por usuario
+El sistema implementa un control de acceso estricto mediante `@login_required` y filtrado por el propietario del registro (`propietario=request.user`). Para comprobarlo:
+1. Regístrese con el usuario "Usuario A" y cree dos servicios (ej. "Servicio A1", "Servicio A2").
+2. Cierre sesión e inicie sesión con el "Usuario B".
+3. Al acceder al listado de servicios, comprobará que el "Usuario B" no visualiza los servicios del "Usuario A", garantizando la privacidad y el aislamiento de datos entre cuentas.
 
----
+## Historial de unidades
+- Unidad 1: portafolio estático con HTML5 + Tailwind
+- Unidad 2: modelo Servicio migrado a MySQL, deploy dinámico en Render
+- Unidad 3: CRUD completo con ModelForms + autenticación y sesiones
+- Unidad 4: paginación, búsqueda, UI review y defensa final
 
-## 🛠️ Tecnologías Utilizadas
-
-* **Backend:** Python 3.12, Django 6.1.1
-* **Base de Datos:** MySQL (Aiven Cloud)
-* **Frontend:** Tailwind CSS (CDN), HTML5
-* **Despliegue & Servidor:** Gunicorn, WhiteNoise (Archivos estáticos)
-
----
-
-## ⚙️ Instalación y Ejecución Local
+## Instalación y Ejecución Local
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/garciavasquezdsm3/u3s6-garcia-vasquez-oscar.git
-   cd u3s6-garcia-vasquez-oscar
+   git clone https://github.com/garciavasquezdsm3/u4s8-garcia-vasquez-oscar.git
+   cd u4s8-garcia-vasquez-oscar
    ```
 
 2. **Crear y activar el entorno virtual:**
@@ -64,9 +62,7 @@ Proyecto desarrollado para la **Unidad 4 · Semana 7 (Pulido Funcional, UX y Sim
    ```
    Abre en tu navegador: `http://127.0.0.1:8000/`
 
----
-
-## 🚢 Despliegue en Producción (Render)
+## Despliegue en Producción (Render)
 
 * **Build Command:**
   ```bash
@@ -77,9 +73,6 @@ Proyecto desarrollado para la **Unidad 4 · Semana 7 (Pulido Funcional, UX y Sim
   gunicorn miproyecto.wsgi
   ```
 
----
-
-## 👨‍💻 Autor
-
+## Autor
 * **Óscar García Vásquez**
-* Grupo / DSM3
+* DSM3

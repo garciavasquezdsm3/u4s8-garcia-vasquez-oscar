@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: u4s7-garcia-vasquez-oscar
+    name: u4s8-garcia-vasquez-oscar
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
@@ -13,9 +13,9 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_HOSTS
-        value: u4s7-garcia-vasquez-oscar.onrender.com
+        value: u4s8-garcia-vasquez-oscar.onrender.com
       - key: CSRF_TRUSTED_ORIGINS
-        value: https://u4s7-garcia-vasquez-oscar.onrender.com
+        value: https://u4s8-garcia-vasquez-oscar.onrender.com
       - key: DB_NAME
         sync: false
       - key: DB_USER
