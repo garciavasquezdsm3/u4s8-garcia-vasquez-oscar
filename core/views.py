@@ -102,3 +102,13 @@ def eliminar_servicio(request, pk):
         messages.success(request, 'Servicio eliminado exitosamente.')
         return redirect('servicios')
     return render(request, 'core/servicio_confirm_delete.html', {'servicio': servicio})
+
+# /logout/: no se toca
+    path('logout/', views.cerrar_sesion, name='logout'),
+    # /acerca/: NUEVA ruta; apunta a views.acerca y se llama 'acerca'
+    path('acerca/', views.acerca, name='acerca'),
+# cierra la lista urlpatterns
+# acerca: NUEVA vista pública (sin @login_required)
+def acerca(request):
+    # render sin contexto: la plantilla no necesita datos de la base
+    return render(request, 'core/acerca.html')
