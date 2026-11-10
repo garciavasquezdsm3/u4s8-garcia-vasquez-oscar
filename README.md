@@ -76,3 +76,4 @@ El sistema implementa un control de acceso estricto mediante `@login_required` y
 ## Autor
 * **Óscar García Vásquez**
 * DSM3
+# u4P3-Garcia-Vasquez-Oscar
